@@ -1,7 +1,9 @@
- json
+json
     {
       "build": {
-        "builder": "DOCKERFILE",
-        "dockerfilePath": "docker/Dockerfile"
+        "builder": "NIXPACKS"
+      },
+      "deploy": {
+        "startCommand": "python -m hermes_cli gateway start"
       }
     }
