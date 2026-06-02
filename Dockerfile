@@ -168,6 +168,9 @@ RUN uv sync --frozen --no-install-project --extra all --extra messaging --extra 
 # .dockerignore excludes node_modules, so the installs above survive.
 COPY --chown=hermes:hermes . .
 
+Railway config: seed default config.yaml into the data volume
+    RUN mkdir -p /opt/data && cp /opt/hermes/railway-config.yaml /opt/data/config.yaml
+
 # Build browser dashboard and terminal UI assets.
 RUN cd web && npm run build && \
     cd ../ui-tui && npm run build
