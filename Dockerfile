@@ -300,5 +300,5 @@ RUN mkdir -p /opt/data
 # and exec's the final program so its exit code becomes the container
 # exit code. Without the wrapper-as-ENTRYPOINT, leading-dash args
 # like `--version` would be intercepted by /init's POSIX shell.
-ENTRYPOINT [ "/init", "/opt/hermes/docker/main-wrapper.sh" ]
-CMD ["gateway", "run"]
+ENTRYPOINT [ "/opt/hermes/docker/railway-entrypoint.sh" ]
+CMD []
